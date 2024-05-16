@@ -1,0 +1,74 @@
+Ignite Internships- Linux Administration class notes
+
+touch -  to create file
+ls - (list directory contents)
+cat - to show the data(concatenate)
+nano - to modify file => ctrl+X to exit
+man - to show manual
+
+drwxr-xr-x 2 akshith 4096 May 12 02:49 Downloads
+-rw-rw-r-- 1 akshith   59 May 15 12:35 IARE.txt
+
+=> here the dr indicates folder or directory
+r - read
+w - write
+x - execute
+three rwx - one for user, group, others
+they are the permissions given to each group;
+
+to show hidden files - ls -a
+. before the file or directory indicates that it is hidden
+
+Linux OS structure:
+	user(input)>>>>>>shell>>>>>>>kernel
+	
+OS - is nothing but kernel + all other tools
+
+shell - helps with communication with the kernel
+bash - is an example of shell
+there zsh t k are other shells as well. 
+
+CLI - Command Line Interface
+
+akshith@akshith-Nitro-AN515-58:~$
+
+akshith -> username
+@ akshith-Nitro-AN515-58 -> hostname - name of the computer
+:~$ - path
+
+pwd - present working directory
+
+.. - indicates past
+. - present
+
+mkdir - make directory
+
+cd ~ use to go to home folder 
+
+gedit - to create file and gui
+
+grep <word> <fileName> - to find the word in the given file
+
+rm - delete file
+rmdir - for removing directory
+mv - move file
+cp - copy file 
+mv <old file> <new file name> to rename the file name
+
+history - gives all the commands used 
+ps - shows processes
+kill - to stop the process
+
+tar - to archive a file 
+zip <filename.zip> <file> - zips the file
+unzip - to unzip the file
+
+sudo - administrator of linux
+sudo apt-get install <package>
+sudo apt-get remove <package>
+
+sudo su - converts to admin access gives # at the end
+
+synaptic package manager is used to install applications using UI
+
+

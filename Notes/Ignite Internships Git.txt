@@ -1,0 +1,35 @@
+Ignite Internships Git class
+
+Key words:
+
+=> repositories - project file
+=> branch - copy of the code after making change to the source code
+=> consider repository as an inverted tree, root branch is the master branch
+=> we make a copy of the entire code and make changes to them this is called branch
+=> This is later verified and merged
+=> merge - means to add the branch to the main trunk or root branch
+=> clone - to copy and install the source code from open source onto local system and then we can modify it by ourselves
+=> version control, source control management
+
+Git installation:
+
+=> sudo apt-get install git : to install git to the system
+=> get --version : to check if git is installed correctly to the system
+
+Git commands:
+
+=> git add <filename> : to add to local repository
+=> git commit <filename> : the added files are committed to the local repository
+=> git push : to push to the remote location
+=> git state : gives current version
+=> git init
+   git add README.md
+   git commit -m "first commit"
+   git branch -M main
+   git remote add origin https://github.com/Akshtih/Ignite_Internships.git
+   git push -u origin main
+=> git remote add origin https://github.com/Akshtih/Ignite_Internships.git
+   git branch -M main
+   git push -u origin main
+   
+
