@@ -12,7 +12,7 @@ note: after this (myenv) is added to the starting of you terminal
 
 5) cd myproject => change directory to myproject
 
-6) django-admin startapp myapp => to create app
-
+6) python manage.py startapp myapp => to create app
 
 7) python manage.py runserver => to run the server
+
