@@ -1,1 +1,40 @@
-I am Akshith
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo list</title>
+    <style>
+        .status_done{
+            background-color: lightgreen;
+        }
+        .status_not_done{
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Todo List</h1>
+    <ol>
+        {% for i in items %}
+        <li>
+           <div><h2>Title: {{ i.title }}</h2></div> 
+           <ul {% if i.status == True %} class="status_done" {% else %} class = 'status_not_done'> {% endif %}
+                <li><p>Description: 
+                    {{ i.description }}
+                </p></li>
+                <li><p>
+                    Status: {{ i.status }}
+                </p></li>
+                <li><p>
+                    Date: {{ i.created }}
+                </p></li> 
+           </ul>
+            
+        </li>
+        {% endfor %}
+    </ol>
+</body>
+</html>

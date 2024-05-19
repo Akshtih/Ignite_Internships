@@ -16,3 +16,8 @@ note: after this (myenv) is added to the starting of you terminal
 
 7) python manage.py runserver => to run the server
 
+8) python manage.py makemigrations => to create migrations
+
+9) python manage.py migrate => to complete migrations
+
+10) python manage.py createsuperuser => to create super user
