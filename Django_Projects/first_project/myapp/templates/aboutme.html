@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo list</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
         .status_done{
             background-color: lightgreen;
@@ -15,26 +16,54 @@
     </style>
 </head>
 <body>
-
-    <h1>Todo List</h1>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  
+    <h1 style="display: flex; justify-content: center; padding-top: 40px;">Todo List</h1>
+    <br>
+    <br>
     <ol>
         {% for i in items %}
-        <li>
-           <div><h2>Title: {{ i.title }}</h2></div> 
-           <ul {% if i.status == True %} class="status_done" {% else %} class = 'status_not_done'> {% endif %}
-                <li><p>Description: 
-                    {{ i.description }}
-                </p></li>
-                <li><p>
-                    Status: {{ i.status }}
-                </p></li>
-                <li><p>
-                    Date: {{ i.created }}
-                </p></li> 
-           </ul>
-            
+        {% if i.status == True%}
+        <li class="card text-bg-success mb-3" style="width: 18rem;">
+           <div class="card-body">
+                    <h2 class="card-title">Title: {{ i.title }}</h2>
+                    <p>Description: {{ i.description }} </p>    
+                    <p>Status: {{ i.status }} </p>
+                    <p> Date: {{ i.created }} </p>
+                    <a href="{% url 'delete' i.id %}" class="btn btn-primary">Delete Task</a>
+            </div> 
         </li>
+        {% else %}
+        <li class="card text-bg-danger mb-3" style="width: 18rem;" >
+            <div class="card-body">
+                     <h2 class="card-title">Title: {{ i.title }}</h2>
+                     <p>Description: {{ i.description }} </p>
+                     <p>Status: {{ i.status }} </p>
+                     <p> Date: {{ i.created }} </p>
+                     <a href="{% url 'complete' i.id %}" class="btn btn-primary">Complete Task</a>
+                     <a href="{% url 'delete' i.id %}" class="btn btn-primary">Delete Task</a>
+
+             </div> 
+         </li>
+         {% endif %}
         {% endfor %}
+        <form method="post" action="{% url 'add' %}">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <input type="text" id="title" name="title" class="form-control" placeholder="Title" aria-describedby="basic-addon3">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <input type="text" id="description" name="description" class="form-control" placeholder="Description" aria-describedby="basic-addon3">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <input type="date" id="date" name="date" class="form-control" placeholder="date" aria-describedby="basic-addon3">
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-primary">Add New Item</button>
+                </div>
+            </div>
+        </form>
     </ol>
 </body>
 </html>
